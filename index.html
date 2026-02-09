@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="/styles.css">
+        <link rel="icon" href="/img/favicon.ico">
+        <title>Kasyno u Sołtysa</title>
+    </head>
+    <body>
+        <header>
+            <img src="/img/logo.png" style="width:20em">
+        </header>
+        <main>
+            <dialog id="_error" class="error">
+                <button onclick="_error.close();">X</button>
+                <p id="_errorMessage"></p>
+            </dialog>
+
+            <section id="_gameSetup">
+                <h1>Gracze (<span id="_playerCount">0</span>/4)</h1>
+                <div id="_playerListInputs">
+                    <input>
+                    <input>
+                    <input>
+                    <input>
+                </div>
+                <button class="btn-green" id="_startGameButton" onclick="beginGame();" disabled>Rozpocznij</button>
+            </section>
+
+            <section id="_gameTable" style="display:none">
+                <p>Gracz ze <span class="servingPlayer">złotą</span> nazwą rozdaje karty.</p>
+                <table class="scores">
+                    <tr id="_playerNameRow"></tr>
+                    <tr id="_scoreEntryRow"></tr>
+                </table>
+
+                <button id="_scoreSubmitBtn" class="btn-green" onclick="submitScores();">Następna runda</button>
+
+                <div id="_gameEndControls" style="display:none">
+                    <button class="btn-green" onclick="restartGame();">Restart</button>
+                </div>
+            </section>
+        </main>
+        <script src="/util.js"></script>
+        <script src="/main.js"></script>
+    </body>
+</html>

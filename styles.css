@@ -1,0 +1,177 @@
+body {
+    margin: 0;
+    padding: 1em;
+    padding-bottom: 10em;
+    padding-top: 11em;
+    background: url("/img/bg2.gif"), #087130;
+    color: white;
+    font-size: 120%;
+    text-shadow: 0.075em 0.075em 0.05em black;
+    font-family: sans-serif;
+}
+
+input, button {
+    font-size: inherit;
+}
+
+/* vignette */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    box-shadow: 0 0 7.5em rgba(0,0,0,0.9) inset;
+    pointer-events: none;
+}
+
+body > header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-bottom: 0.5em;
+    padding-top: 2em;
+    width: 100%;
+    text-align: center;
+    background: #0005;
+    border-bottom: 1px solid black;
+}
+
+body > main > section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button.btn-green {
+    color: white;
+    background-color: #19af43;
+    text-shadow: 1px 1px 1px #000a;
+    border: 1px solid black;
+    border-radius: 0.3em;
+    cursor: pointer;
+    padding: 0.5em 1em;
+    text-align: center;
+    transition-property: transform, filter;
+    transition-duration: 0.1s;
+}
+
+button.btn-green:hover  { filter: brightness(120%); }
+button.btn-green:active { filter: brightness(105%); }
+
+button.btn-green[disabled] {
+    cursor: not-allowed;
+    transform: scale(95%);
+    filter: saturate(70%) brightness(80%);
+}
+
+#_gameSetup h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 200%;
+}
+
+input {
+    background: #ffffff18;
+    border: 1px solid black;
+    border-radius: 0.2em;
+    display: block;
+    margin: 0.5em;
+    color: white;
+    text-align: center;
+    text-shadow: 1px 1px 1px #000a;
+
+    transition-property: transform, background, border;
+    transition-duration: 0.1s;
+}
+
+input:focus {
+    outline: none;
+    background: #ffd70025;
+    border: 1px solid #ffd700cc;
+    transform: scale(101%);
+}
+
+#_gameTable .scores {
+    border-collapse: collapse;
+    margin-bottom: 1em;
+}
+
+#_gameTable .scores td {
+    border: 1px solid black;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#_gameTable .scores tr:first-child td {
+    font-weight: bold;
+}
+
+#_gameTable .scores tr:last-child td:has(input:focus) {
+    outline: 1px solid gold;
+    outline-offset: -1px;
+}
+
+#_gameTable input {
+    width: 100%;
+    margin: 0;
+    padding: 0.25em 0 ;
+    border: none;
+    transition-property: none;
+}
+
+#_gameTable input:focus {
+    transform: none;
+}
+
+#_gameTable .servingPlayer {
+    color: gold;
+    font-weight: bold;
+}
+
+dialog.error {
+    padding: 1em;
+    background: #fbb;
+    border: none;
+    color: #a11;
+}
+
+dialog.error > button {
+    float: right;
+    position: relative;
+    top: -1em;
+    right: -1em;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+dialog.error > p {
+    min-width: 15em;
+    text-shadow: none;
+}
+
+::backdrop {
+    background: #0007;
+}
+
+.leaderboard {
+    border-collapse: collapse;
+    margin-bottom: 0.5em;
+}
+
+.leaderboard td {
+    padding: 0.5em;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.leaderboard tr:nth-child(2) td:first-child { background: #ffd700; }
+.leaderboard tr:nth-child(3) td:first-child { background: #c0c0c0; }
+.leaderboard tr:nth-child(4) td:first-child { background: #bb6828; }
+.leaderboard tr:nth-child(2) td:not(:first-child) { background: #ffd7005f; }
+.leaderboard tr:nth-child(3) td:not(:first-child) { background: #c0c0c05f; }
+.leaderboard tr:nth-child(4) td:not(:first-child) { background: #bb68285f; }
